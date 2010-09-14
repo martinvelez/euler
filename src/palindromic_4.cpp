@@ -15,42 +15,19 @@
  * DATE: 09/13/2010
  */
 
+
 #include <iostream>
-#include <sstream>
-#include <string>
+#include "../lib/number.h"
+
 
 using namespace std;
 
-/**
- * reverse a string and return a copy
- */
-string reverse(string str){
-	string rev_str;
-	string::reverse_iterator rit;
-	for(rit=str.rbegin(); rit < str.rend(); rit++){
-		rev_str.push_back(*rit);
-	}
-	return rev_str;
-}//reverse
-
 
 /**
- * Check if a number is palindromic.
+ * Find the largest palindromic number which is a multiple of two three-digit
+ * numbers.
  */
-bool is_palindromic(unsigned long num){
-	/**
-	 * Convert integer to string
-	 */
-	string num_str;
-	stringstream out_ss;
-	out_ss << num;
-	num_str = out_ss.str();
-
-	return num_str == reverse(num_str);
-}//is_palindromic()
-
-
-int main(int argc, char* argv[]){
+unsigned long int largest_palindrome(){
 	unsigned long int largest_palindrome = 0;
 	
 	for(unsigned long int i = 999; i >= 100; i--){
@@ -64,6 +41,11 @@ int main(int argc, char* argv[]){
 		}//for
 	}//for
 	
-	cout << largest_palindrome << endl;
+	return largest_palindrome;
+}//largest_palindrome
+
+
+int main(int argc, char* argv[]){
+	cout << largest_palindrome() << endl;
 	return 0;
 }//main()
