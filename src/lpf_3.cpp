@@ -8,26 +8,30 @@
  * Date: 09/13/2010
  */
 
-#include <vector>
 #include <iostream>
 #include <cstdlib>
-#include <algorithm>
+#include "../lib/prime.h"
 
 using namespace std;
 
-bool is_prime(long long int num){
-	if( num < 1 || ((num % 2 == 0) && num != 2)){ return false; }
-	if (num == 2){ return true; }
+long long int largest_prime_factor(long long int num){
+	long long int largest_prime_factor = 0;
+	int first_prime = 2;
+	
+	if(num % first_prime == 0){ largest_prime_factor = first_prime; }
+	
 	for(long long int i = 3; i < num/2; i+=2){
-		if(num % i == 0){ return false; }
-	}
-	return true;
-}//is_prime()
+		if(num % i == 0){
+			if(is_prime(i)){ largest_prime_factor = i; }
+		}//if - divides num, then test if prime
+	}//for
+	
+	return largest_prime_factor;
+}//largest_prime_factor()
 
 
 int main(int argc, char* argv[]){
 	long long int num;
-	long long int largest_prime_factor = 0;
 	
 	if(argc != 2){
 		cerr << "usage: prime_factorization <integer>" << endl;
@@ -36,14 +40,8 @@ int main(int argc, char* argv[]){
 	else{ 
 		num = atoll(argv[1]); 
 	}//else - correct usage
-	
-	if(num % 2 == 0){ largest_prime_factor = 2; }
-	for(long long int i = 3; i < num/2; i+=2){
-		if(num % i == 0){
-			if(is_prime(i)){ largest_prime_factor = i; }
-		}//if - is prime, then test
-	}//for
-	
-	cout << largest_prime_factor << endl;
+		
+	cout << largest_prime_factor(num) << endl;
+
 	return 0;
 }//main()
