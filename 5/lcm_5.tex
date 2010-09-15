@@ -1,0 +1,77 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{amsmath}
+\begin{document}
+
+
+\section{Problem}
+"2520 is the smallest number that can be divided by each of the numbers from 
+1 to 10 without any remainder.
+What is the smallest positive number that is evenly divisible by all of the 
+numbers from 1 to 20?"
+
+\subsection{Restatement of Problem}
+Find the least common multiple of the numbers 1-20.
+
+\section{Solution}
+No programming is needed to solve this problem.  I was trying to draft up 
+an algorithm an accidentally stumbled acrossed the answer.
+
+\begin{enumerate}
+\item Perform the prime factorization on each number.
+\item For each distinct prime, find the factor from the list creates in the
+previous step with the largest power.
+\item Multiplify these factors, this is the least common multiple.
+\end{enumerate}
+
+First, perform the prime factorization on each number.
+\begin{align*} 
+20 &= 2^2 * 5 \\
+19 &= 19 \\
+18 &= 2 * 3^2 \\
+17 &= 17 \\
+16 &= 2^4 \\
+15 &= 3 * 5 \\
+14 &= 2 * 7 \\
+13 &= 13 \\
+12 &= 2^2 * 3 \\
+11 &= 11 \\
+10 &= 2 * 5 \\
+9 &= 3^2 \\
+8 &= 2^3 \\
+7 &= 7 \\
+6 &= 2 * 3 \\
+5 &= 5 \\
+4 &= 2^2 \\
+3 &= 3 \\
+2 &= 2 
+\end{align*}
+
+Second, for each distinct prime number, find the factor with the largest power.
+\begin{align*} 
+20 &= 2^2 * \mathbf{5} \\
+19 &= \mathbf{19} \\
+18 &= 2 * \mathbf{3^2} \\
+17 &= \mathbf{17} \\
+16 &= \mathbf{2^4} \\
+15 &= 3 * 5 \\
+14 &= 2 * \mathbf{7} \\
+13 &= \mathbf{13} \\
+12 &= 2^2 * 3 \\
+11 &= \mathbf{11} \\
+10 &= 2 * 5 \\
+9 &= 3^2 \\
+8 &= 2^3 \\
+7 &= 7 \\
+6 &= 2 * 3 \\
+5 &= 5 \\
+4 &= 2^2 \\
+3 &= 3 \\
+2 &= 2 
+\end{align*}
+
+Third, multiply these numbers.
+\begin{align*}
+5 * 19 * 3^2 * 17 * 2^4 * 7 * 13 * 11 = 2^4 * 3^2 * 5 * 7 * 11 * 13 * 17 * 19 = 232792560
+\end{align*}
+
+\end{document}
