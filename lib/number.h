@@ -31,6 +31,22 @@ bool is_prime(long long int num){
 }//is_prime()
 
 
+//!Find the nth prime
+unsigned long int find_prime(int pos){
+	int count = 1;
+	unsigned long int num = 2;
+	
+	if(pos == 1) { return num; }
+	
+	num = 3;
+	while( count < pos){
+			if(is_prime(num)) { count++; }
+			if( count != pos ) { num = num + 2; }
+	}
+	
+	return num;
+}//find_prime
+
 /**
  * reverse an integer expressed in base 10
  */
