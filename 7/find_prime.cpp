@@ -9,7 +9,7 @@
  * we can see that the 6th prime is 13.
  * What is the 10001st prime number?"
  * 
- * Answer: _________
+ * Answer: 104743
  * 
  * USAGE: find_prime_7 <pos>
  * 
