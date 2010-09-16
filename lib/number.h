@@ -52,3 +52,22 @@ unsigned long int reverse(unsigned long int num){
 bool is_palindromic(unsigned long int num){
 	return num == reverse(num);
 }//is_palindromic()
+
+/**
+ * Find the sum of the squares of the numbers in the range (inclusive)
+ */
+unsigned long int sum_of_squares(int low, int high){
+	unsigned long int sum = 0;
+	for(int i = low; i <= high; i++){ sum = sum + pow(i,2); }
+	return sum;
+}//sum_of_squares
+
+
+/**
+ * Find the square of the sume of the integers in the range (inclusive)
+ */
+unsigned long int square_of_sum(int low, int high){
+	unsigned long int sum = 0;
+	for(int i = low; i <= high; i++){ sum = sum + i; }
+	return pow(sum,2);
+}//square_of_sum
