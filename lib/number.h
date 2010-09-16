@@ -53,21 +53,32 @@ bool is_palindromic(unsigned long int num){
 	return num == reverse(num);
 }//is_palindromic()
 
-/**
- * Find the sum of the squares of the numbers in the range (inclusive)
- */
+
+//!Find the sum of the squares of the numbers in the range (inclusive)
 unsigned long int sum_of_squares(int low, int high){
 	unsigned long int sum = 0;
-	for(int i = low; i <= high; i++){ sum = sum + pow(i,2); }
+	if(low == 1){
+		//!Sum of the first n square numbers = (n(n+1)(2n+1))/6
+		sum = (high * (high + 1) * ((2 * high) + 1))/6;
+	}//if - first n square numbers (quicker method)
+	else{
+		for(int i = low; i <= high; i++){ sum = sum + pow(i,2); }
+	}//else - any range
 	return sum;
 }//sum_of_squares
 
 
-/**
- * Find the square of the sume of the integers in the range (inclusive)
- */
+//!Find the square of the sume of the integers in the range (inclusive)
 unsigned long int square_of_sum(int low, int high){
 	unsigned long int sum = 0;
-	for(int i = low; i <= high; i++){ sum = sum + i; }
-	return pow(sum,2);
+	if(low == 1){
+		//!Sum of first n numbers = (n(n+1)) / 2
+		sum = pow( (high * (high + 1)) / 2, 2);
+	}//if - first n numbers (quicker method)
+	else{
+		for(int i = low; i <= high; i++){ sum = sum + i; }
+		cout << "square_of_sum = " << sum << endl;
+		sum = pow(sum, 2);
+	}//else - any range
+	return sum;
 }//square_of_sum

@@ -50,6 +50,11 @@ int main(int argc, char* argv[]){
 	else{ 
 		low = atoi(argv[1]);
 		high = atoi(argv[2]);
+		if( low > high){
+			cerr << "USAGE: sum_6 <low> <high>" << endl;
+			cerr << "low number must be less than or equal to the high number" << endl;
+			return EXIT_FAILURE;
+		}
 	}//else - correct usage
 	
 	cout << difference_of_squares(low, high) << endl;
