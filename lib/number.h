@@ -17,16 +17,26 @@ using namespace std;
  * Tests if a given number (num) is prime.
  */
 bool is_prime(long long int num){
-	if( num < 1 || ((num % 2 == 0) && num != 2)) return false;
-	if (num == 2) return true;
-	
-	/**
-	 * If n is composite, then it can be factored into two values, 
-	 * at least one of which must be <= sqrt(n).
-	 */
-	for(long long int i = 3; i < ((long long int) sqrt((double) num) + 1); i+=2){
-		if(num % i == 0) return false;
-	}//for
+	if( num <= 1) {return false;}
+	else if( num == 2 or num == 3) { return true; }
+	else if( num % 2 == 0) { return false; }
+	else if( num == 5 || num == 7) { return true; }
+	else if( num % 3 == 0) { return false; }
+	else {
+		/**
+		 * If n is composite, then it can be factored into two values, 
+		 * at least one of which must be <= sqrt(n).
+		 */
+		long long int limit = (long long int) sqrt((double) num);
+		//cout << "num = " << num << endl;
+		//cout << "limit = " << limit << endl;
+		long long int i = 5;
+		while(i <= limit){
+			if(num % i == 0){ return false;}
+			if(num % (i+2) == 0){ return false;}
+			i = i + 6;
+		}
+	}//else - start with 5 ( quicker method )
 	return true;
 }//is_prime()
 
