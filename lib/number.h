@@ -108,3 +108,24 @@ unsigned long int square_of_sum(int low, int high){
 	}//else - any range
 	return sum;
 }//square_of_sum
+
+
+//!Find the product of the pythagorean triplet {a,b,c} where a+b+c=1000.
+unsigned long int pythagorean_triplet(int sum){
+	int temp_sum = 0;
+	unsigned long int product = 0;
+
+	int limit = sum/3;
+	for(int n = 2; n < limit; n++){
+		if(temp_sum == sum) { break; }
+		for(int m = 1; m < n; m++){
+			int a = pow(n,2) - pow(m,2);
+			int b = 2*m*n;
+			int c = pow(n,2) + pow(m,2);
+			temp_sum = a + b + c;
+			//cout << a << ", " << b << ", " << c << ", sum = " << temp_sum << endl;
+			if(temp_sum == sum) { product = a * b * c; break; }
+		}
+	}
+	return product;
+}
