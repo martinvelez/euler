@@ -27,7 +27,7 @@ using namespace std;
 
 
 int main(int argc, char* argv[]){
-	int sum = 1000;
+	int sum = 1000000;
 	cout << pythagorean_triplet(sum) << endl;
 	return 0;
 }//main()
