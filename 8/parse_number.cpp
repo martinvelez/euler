@@ -22,7 +22,6 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
-#include "../lib/number.h"
 
 
 using namespace std;
