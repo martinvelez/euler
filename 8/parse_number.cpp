@@ -34,11 +34,7 @@ unsigned long int parse_number(string num_str){
 	//cout << "limit = " << limit << endl;
 	for(int i = 0; i < limit; i++){
 		unsigned long int temp = 1;
-		
-		for(int j = 0; j < 5; j++){ 
-			temp = temp *  atoi(num_str.substr(i+j, 1).c_str());
-		}
-		cout << "temp = " << temp << endl;
+		for(int j = 0; j < 5; j++){ temp = temp *  atoi(num_str.substr(i+j, 1).c_str());}
 		if(temp > max_product) { max_product = temp; }
 	}
 	return max_product;
