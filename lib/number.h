@@ -57,6 +57,21 @@ unsigned long int find_prime(int pos){
 	return num;
 }//find_prime
 
+
+//!Sum of primes less than limit
+double sum_of_primes(int limit){
+	double sum = 2;
+	if(limit == 2) { return sum;}
+	for(int i = 3; i < limit; i = i + 2){
+		if(is_prime(i)){
+			sum = sum + i;
+		}
+	}
+	return sum;
+}
+
+
+
 /**
  * reverse an integer expressed in base 10
  */
