@@ -70,9 +70,9 @@ int main(int argc, char* argv[]){
 		for(unsigned int i = 0; i <= line.length() - 2; i+=3){
 				//cout << line.substr(i, 2).c_str() << endl;
 				temp_vector.push_back( atoi(line.substr(i, 2).c_str()) );
-		}
+		}//for - parse line
 		grid.push_back( temp_vector );
-	}
+	}//while
 	
 	cout << inner_product_in_grid(grid) << endl;
 	
