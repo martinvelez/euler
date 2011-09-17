@@ -13,6 +13,8 @@
 
 using namespace std;
 
+
+
 /**
  * Tests if a given number (num) is prime.
  */
@@ -62,11 +64,10 @@ unsigned long int find_prime(int pos){
 double sum_of_primes(int limit){
 	double sum = 2;
 	if(limit == 2) { return sum;}
-	for(int i = 3; i < limit; i = i + 2){
-		if(is_prime(i)){
+	for(int i = 3; i < limit; i = i + 2)
+		if(is_prime(i))
 			sum = sum + i;
-		}
-	}
+	
 	return sum;
 }
 
@@ -143,4 +144,28 @@ unsigned long int pythagorean_triplet(int sum){
 		}
 	}
 	return product;
+}
+
+//!Determine if a number is a perfect square
+bool is_square(unsigned long long int n){
+	double d_sqrt = sqrt(n);
+	int i_sqrt = d_sqrt;
+	return d_sqrt == i_sqrt;
+}
+
+//!Determine if a number is a triangular number
+bool is_triangular_number(unsigned long int n){
+	return is_square((8 * n) + 1);
+}
+
+
+//!Count the number of divisors of a number
+int divisor_count(unsigned long long int num){
+	int count = 1;
+	
+	if(is_prime(num)){count = 2; return count;}
+	
+	for(unsigned long long int i = 2; i <= num; i++){if(num % i == 0){ count++;}}
+	
+	return count;
 }

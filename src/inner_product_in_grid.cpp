@@ -58,7 +58,7 @@ int main(int argc, char* argv[]){
 	else{ 
 		datafile.open(argv[1]);
 		if (!datafile){
-			cout << "Error in openening file";
+			cout << "Error in opening file";
 			return EXIT_FAILURE;
 		}
 	}//else - correct usage
