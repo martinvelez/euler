@@ -72,7 +72,6 @@ double sum_of_primes(int limit){
 }
 
 
-
 /**
  * reverse an integer expressed in base 10
  */
